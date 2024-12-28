@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-4">Task Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">< {{ Task.name }} ></h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Status: {{ Task.status   }}</strong>
+            <span class="badge bg-primary">< status ></span>
+        </p>
+        <p class="card-text"><strong>Description: {{ Task.description }}</strong> < description ></p>
+    </div>
+</div>
+<div class="d-flex mt-4">
+    <div class="me-4">
+        <a href="{% url 'update_Task' Task.id %}" class="btn btn-primary">Update</a>
+    </div>
+    <div>
+        <a href="{% url 'delete_Task' Task.id %}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+<div class="mt-4">
+    <a href="#" class="btn btn-secondary">Back to Task List</a>
+</div>
+{% endblock %}
